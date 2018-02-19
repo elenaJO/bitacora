@@ -1,0 +1,11 @@
+.publications {
+    background: #ffff;
+    box-shadow: -1px -1px 15px 1px rgba(0,0,0,0.09);
+    margin-bottom: 40px;
+    /* padding: 20; */
+}
+
+.img-pub {
+    width: 70%;
+    height: 70%;
+}
