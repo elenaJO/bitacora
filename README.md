@@ -1,14 +1,9 @@
 # FLASH BITACORA
-
-Vamos a crear una bitácora con la que podrás agregar mensajes, imágenes, audio, video, ubicaciones y fechas. Te sugerimos lo siguiente para llevar a cabo este producto:
-
-* Usar Materialize como framework de css
-* Usar un FAB, Fixed Action Button que tendrá nuestras opciones.
-* Manejar el DOM, para crear de manera dinámica los elementos que serán agregados a nuestra bitácora
-
-## VISTA
+bitácora es una página con la que podrás agregar mensajes, imágenes, audio, video, ubicaciones y fechas. 
 
 ![image](public/assets/image/bitacora.PNG)
+
+## Desarrollado para [Laboratoria](http://laboratoria.la) 
 
 ## DESARROLLADO CON ..
 
