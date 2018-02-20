@@ -21,7 +21,7 @@ $(document).ready(function () {
     var textMessage = $('#text-message').val();
     var appen = `<div class="row">
                    <div class="col s12 m8 push-m2 publications">
-                     <h3>${titleMessage}</h3>
+                     <h5>${titleMessage}</h5>
                      <p>${textMessage}</p>
                    </div>
                 </div>`
@@ -43,8 +43,10 @@ $(document).ready(function () {
     var titleImage = $('#title-image').val();
     var appen = `<div class="row">
                    <div class="col s12 m8 push-m2 publications">
-                   <h3>${titleImage}</h3>
+                   <h5>${titleImage}</h5>
+                   <div class="center-align">
                    <img src=${image} alt="" class="img-pub">
+                   </div>
                    </div>
                 </div>`
     containerContext.append(appen);
@@ -59,13 +61,15 @@ $(document).ready(function () {
     var date = $('#date').val();
     var appen = `<div class="row">
     <div class="col s12 m8 push-m2 publications">
-    <h3>${titleDate}</h3>
+    <h5>${titleDate}</h5>
     <p>${date}</p>
     <div id="map" class="map"></div>
     </div>
  </div>`
 containerContext.append(appen);
 initMap();
+$('#title-date').val('');
+$('#date').val('');
 
   });
 
@@ -99,20 +103,26 @@ initMap();
       var appen = `<div class="row">
                    <div class="col s12 m8 push-m2 publications">
                    <h3>${titleVideo}</h3>
+                   <div class="center-align">
                    <video src=${video} alt="" class="img-pub" controls></video>
                    </div>
+                   </div>
                 </div>`
-      // var appenReplace = appen.replace('_pub_', event.target.result);
       containerContext.append(appen);
+      $('.file-path').val('');
+      $('#title-video').val('');
     } else {
       var appen = `<div class="row">
                    <div class="col s12 m8 push-m2 publications">
                    <h3>${titleVideo}</h3>
+                   <div class="center-align">
                    <audio src=${video} alt="" controls></audio>
                    </div>
+                   </div>
                 </div>`
-      // var appenReplace = appen.replace('_pub_', event.target.result);
       containerContext.append(appen);
+      $('.file-path').val('');
+      $('#title-video').val('');
     }
   })
 });
