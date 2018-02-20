@@ -1,7 +1,7 @@
 # FLASH BITACORA
 bitácora es una página con la que podrás agregar mensajes, imágenes, audio, video, ubicaciones y fechas. 
 
-![image](public/assets/image/bitacora.PNG)
+![bitacora](https://user-images.githubusercontent.com/32310087/36440856-c9d09168-163e-11e8-8056-ed8ffe6df964.PNG)
 
 ## Desarrollado para [Laboratoria](http://laboratoria.la) 
 
