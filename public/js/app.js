@@ -19,15 +19,20 @@ $(document).ready(function () {
   $('#public-message').click(function () {
     var titleMessage = $('#title-message').val();
     var textMessage = $('#text-message').val();
-    var appen = `<div class="row">
-                   <div class="col s12 m8 push-m2 publications">
-                     <h5>${titleMessage}</h5>
-                     <p>${textMessage}</p>
-                   </div>
-                </div>`
-    containerContext.append(appen);
-    $('#title-message').val('');
-    $('#text-message').val('');
+    if (titleMessage !== '' && textMessage !== '') {
+      var appen = `<div class="row">
+      <div class="col s12 m8 push-m2 publications">
+        <h5>${titleMessage}</h5>
+        <p>${textMessage}</p>
+      </div>
+    </div>`
+      containerContext.append(appen);
+      $('#title-message').val('');
+      $('#text-message').val('');
+
+    } else {
+      alert('Ingrese mensaje');
+    }
   });
 
   // agregar imagen
@@ -40,18 +45,24 @@ $(document).ready(function () {
   });
 
   $('#public-image').click(function () {
-    var titleImage = $('#title-image').val();
-    var appen = `<div class="row">
-                   <div class="col s12 m8 push-m2 publications">
-                   <h5>${titleImage}</h5>
-                   <div class="center-align">
-                   <img src=${image} alt="" class="img-pub">
-                   </div>
-                   </div>
-                </div>`
-    containerContext.append(appen);
-    $('.file-path').val('');
-    $('#title-image').val('');
+    if (window.FileReader && window.FileList && $('.file-path').val() !== '') {
+      var titleImage = $('#title-image').val();
+      var appen = `<div class="row">
+                     <div class="col s12 m8 push-m2 publications">
+                     <h5>${titleImage}</h5>
+                     <div class="center-align">
+                     <img src=${image} alt="" class="img-pub">
+                     </div>
+                     </div>
+                  </div>`
+      containerContext.append(appen);
+      $('.file-path').val('');
+      $('#title-image').val('');
+
+    } else {
+      alert('Ingrese imagen');
+    }
+
   });
 
   // agregar evento
@@ -59,18 +70,21 @@ $(document).ready(function () {
   $('#public-date').click(function () {
     var titleDate = $('#title-date').val();
     var date = $('#date').val();
-    var appen = `<div class="row">
+    if (titleDate !== '' && date !== '') {
+      var appen = `<div class="row">
     <div class="col s12 m8 push-m2 publications">
-    <h5>${titleDate}</h5>
-    <p>${date}</p>
-    <div id="map" class="map"></div>
-    </div>
- </div>`
-containerContext.append(appen);
-initMap();
-$('#title-date').val('');
-$('#date').val('');
-
+      <h5>${titleDate}</h5>
+      <p>${date}</p>
+      <div id="map" class="map"></div>
+     </div>
+    </div>`
+      containerContext.append(appen);
+      initMap();
+      $('#title-date').val('');
+      $('#date').val('');
+    } else {
+      alert('Ingrese evento y titulo del evento');
+    }
   });
 
   // agregar video
@@ -99,30 +113,35 @@ $('#date').val('');
 
   $('#public-video').click(function () {
     var titleVideo = $('#title-video').val();
-    if (opcion === 'video') {
-      var appen = `<div class="row">
-                   <div class="col s12 m8 push-m2 publications">
-                   <h3>${titleVideo}</h3>
-                   <div class="center-align">
-                   <video src=${video} alt="" class="img-pub" controls></video>
-                   </div>
-                   </div>
-                </div>`
-      containerContext.append(appen);
-      $('.file-path').val('');
-      $('#title-video').val('');
+    // console.log( $('#file-video').val());
+    if(window.FileReader && window.FileList && $('#file-video').val() !== ''){
+      if (opcion === 'video') {
+        var appen = `<div class="row">
+                     <div class="col s12 m8 push-m2 publications">
+                     <h5>${titleVideo}</h5>
+                     <div class="center-align">
+                     <video src=${video} alt="" class="img-pub" controls></video>
+                     </div>
+                     </div>
+                  </div>`
+        containerContext.append(appen);
+        $('.file-path').val('');
+        $('#title-video').val('');
+      } else {
+        var appen = `<div class="row">
+                     <div class="col s12 m8 push-m2 publications">
+                     <h5>${titleVideo}</h5>
+                     <div class="center-align">
+                     <audio src=${video} alt="" controls></audio>
+                     </div>
+                     </div>
+                  </div>`
+        containerContext.append(appen);
+        $('.file-path').val('');
+        $('#title-video').val('');
+      }
     } else {
-      var appen = `<div class="row">
-                   <div class="col s12 m8 push-m2 publications">
-                   <h3>${titleVideo}</h3>
-                   <div class="center-align">
-                   <audio src=${video} alt="" controls></audio>
-                   </div>
-                   </div>
-                </div>`
-      containerContext.append(appen);
-      $('.file-path').val('');
-      $('#title-video').val('');
+      alert('Ingrese video');
     }
   })
 });
