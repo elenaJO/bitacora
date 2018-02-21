@@ -1,3 +1,6 @@
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
 .publications {
     background: #ffff;
     box-shadow: -1px -1px 15px 1px rgba(0,0,0,0.09);
@@ -37,4 +40,6 @@ body {
 
 .color{
     color:#ffff;
+    font-family: 'Gloria Hallelujah', cursive;
+    letter-spacing: 3px;
 }
