@@ -22,5 +22,19 @@
 }
 
 body {
-    background-image: url(../assets/image/fondo.jpg);
+    background-image: url(../assets/image/fondo4.jpg);
+    /* background-size: cover;
+    background-repeat: none; */
+}
+
+.margin {
+    margin-top: 0;
+}
+
+.back{
+    background: rgba(0,0,0,0.3);
+}
+
+.color{
+    color:#ffff;
 }
